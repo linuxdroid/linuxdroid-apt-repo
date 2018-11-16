@@ -6,15 +6,15 @@ def readme():
     with open('README.rst') as f:
         return f.read()
 setup(
-    name = 'termux-apt-repo',
+    name = 'linuxdroid-apt-repo',
     version = '0.3',
     license = 'MIT',
-    description = 'Script to create Termux apt repositories',
+    description = 'Script to create Linuxdroid apt repositories',
     long_description = readme(),
     author = 'Fredrik Fornwall',
     author_email = 'fredrik@fornwall.net',
-    url = 'https://github.com/termux/termux-apt-repo',
-    scripts = ['termux-apt-repo'],
+    url = 'https://github.com/linuxdroid/linuxdroid-apt-repo',
+    scripts = ['linuxdroid-apt-repo'],
     classifiers = (
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',

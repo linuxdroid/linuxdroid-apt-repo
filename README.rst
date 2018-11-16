@@ -1,22 +1,22 @@
-termux-apt-repo
+linuxdroid-apt-repo
 ---------------
 
-Script to create `Termux <https://termux.com>`__ package repos.
+Script to create `Linuxdroid <https://linuxdroid.app>`__ package repos.
 
 It can be used to publish cross-compiled packages created using the
-`Termux build setup <https://github.com/termux/termux-packages>`__ or
+`Linuxdroid build setup <https://github.com/linuxdroid/linuxdroid-packages>`__ or
 with packages created (possibly on-device) with
-`termux-create-package <https://github.com/termux/termux-create-package>`__.
+`linuxdroid-create-package <https://github.com/linuxdroid/linuxdroid-create-package>`__.
 
 Usage instructions
 ------------------
 
-In Termux, install with ``packages install termux-apt-repo`` and execute
+In Linuxdroid, install with ``packages install linuxdroid-apt-repo`` and execute
 as:
 
 ::
 
-    termux-apt-repo [-h] [--use-hard-links] input output [dist] [comp]
+    linuxdroid-apt-repo [-h] [--use-hard-links] input output [dist] [comp]
     
     positional arguments:
     input             folder where .deb files are located
@@ -31,8 +31,8 @@ as:
     --use-hard-links  use hard links instead of copying deb files. Will not work
                       on an android device
 
-When using outside Termux (the script should work on most Linux
-distributions), install with ``pip3 install termux-apt-repo``.
+When using outside Linuxdroid (the script should work on most Linux
+distributions), install with ``pip3 install linuxdroid-apt-repo``.
 
 All the .deb files in the first directory will be published to a newly
 created APT repository in the second directory (which will be deleted if
@@ -44,7 +44,7 @@ Publishing the generated folder
 The published folder can be made available at a publicly accessible
 ``$REPO_URL`` using any method:
 
-1. By running termux-apt-repository on a web server directly.
+1. By running linuxdroid-apt-repository on a web server directly.
 2. Using rsync:
    ``rsync --delete -r <apt-repository-directory> your.host:path/to/folder``.
 3. Creating a zip or tar file and unpacking it at a web server.
@@ -70,6 +70,6 @@ containing the single line:
     deb [trusted=yes] $REPO_URL $dist $comp
 
 ``[trusted=yes]`` is needed if the repo has not been signed with a gpg key.
-To sign it, edit ``termux-apt-repo`` and change ``if False:`` to ``if True:`` near
+To sign it, edit ``linuxdroid-apt-repo`` and change ``if False:`` to ``if True:`` near
 end of script. The signing key then has to be imported by the user to make apt
 trust it.
